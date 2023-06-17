@@ -1,0 +1,12 @@
+.bookContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.book {
+  width: 180px;
+  height: 350px;
+  margin: 12px;
+  box-shadow: 2px 2px 2px 2px grey;
+}
