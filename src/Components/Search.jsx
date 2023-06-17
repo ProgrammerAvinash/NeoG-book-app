@@ -20,6 +20,10 @@ export default function Search() {
     }
   };
 
+  const handleDropDown = (e) => {
+    console.log(e.target.value);
+  };
+
   return (
     <div>
       <div
@@ -47,7 +51,7 @@ export default function Search() {
               <img src={book.image} />
               <p>{book.book}</p>
               <p>{book.author}</p>
-              <select>
+              <select onClick={handleDropDown}>
                 <option value="currently Reading">currently Reading</option>
 
                 <option value="Want to Read">Want to Read</option>
