@@ -21,12 +21,12 @@ export const Books = [
   },
   {
     book: "The Pragmatic Programmer",
-    author: "Andrew Hunt, David Thomas",
+    author: "Andrew Hunt",
     image: "https://i.ibb.co/K0YSChM/Progmatic-Programmer.jpg",
   },
   {
     book: "Head First Design Patterns",
-    author: "Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra",
+    author: "Eric Freeman ",
     image: "https://i.ibb.co/5jGFBPp/Head-First-Design.webp",
   },
   {
@@ -41,7 +41,7 @@ export const Books = [
   },
   {
     book: "The C Programming Language",
-    author: "Brian Kernighan, Dennis Ritchie",
+    author: "Brian Kernighan",
     image: "https://i.ibb.co/4tgNVRJ/C-Programming-Language.jpg",
   },
 ];

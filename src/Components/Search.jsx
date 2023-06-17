@@ -1,8 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Books } from "../Data/Data.js";
+import { useContext } from "react";
+import { DataContext } from "../Context/DataContext";
 import "./Search.css";
 export default function Search() {
+  const { state, dispatch } = useContext(DataContext);
+  const handleProductSearch = (e) => {
+    dispatch({ type: "SEARCH_PRODUCT", payload: e.target.value });
+  };
+  const transformData = () => {
+    let filteredData = [...Books];
+
+    if (state.searchValue) {
+      filteredData = filteredData.filter((product) =>
+        product.book.toLowerCase().includes(state.searchValue.toLowerCase())
+      );
+      return filteredData;
+    }
+  };
+
   return (
     <div>
       <div
@@ -21,15 +38,22 @@ export default function Search() {
           </Link>
         </button>
 
-        <input type="search" />
+        <input type="search" onChange={handleProductSearch} />
       </div>
       <div className="bookContainer">
-        {Books.map((book) => {
+        {transformData()?.map((book) => {
           return (
             <div className="book">
               <img src={book.image} />
               <p>{book.book}</p>
               <p>{book.author}</p>
+              <select>
+                <option value="currently Reading">currently Reading</option>
+
+                <option value="Want to Read">Want to Read</option>
+
+                <option value="read">read</option>
+              </select>
             </div>
           );
         })}
